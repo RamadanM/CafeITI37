@@ -1,0 +1,6 @@
+= simple_form_for @pro do |f|
+  =f.input :name
+  =f.input :price
+  =f.input :category
+  =f.input :photo, as: :file, label: "Upload an image"
+  =f.button :submit
