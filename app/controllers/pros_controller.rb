@@ -8,11 +8,11 @@ class ProsController < ApplicationController
   end
 
   def new
-    @pro =Pro.new
+    @pro =current_user.pros.build
   end
 
   def create
-    @pro =Pro.new(pro_params)
+    @pro =current_user.pros.build(pro_params)
 
     if @pro.save
       redirect_to @pro
@@ -34,7 +34,7 @@ class ProsController < ApplicationController
 
   def destroy
     @pro.destroy
-    redirect_to pros_path  
+    redirect_to pros_path
   end
 
   private
