@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  resources :pros
+  
   devise_for :users
   get 'welcome/index'
-
+  resources :pros
   authenticated :user do
     root "pros#index", as: "authenticated_root"
   end
