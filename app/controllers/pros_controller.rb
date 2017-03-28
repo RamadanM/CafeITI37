@@ -25,9 +25,16 @@ class ProsController < ApplicationController
   end
 
   def update
+    if @pro.update(pro_params)
+      redirect_to @pro
+    else
+      render 'edit'
+    end
   end
 
   def destroy
+    @pro.destroy
+    redirect_to pros_path  
   end
 
   private

@@ -2,3 +2,8 @@
 %h1= @pro.price
 %h1= @pro.category
 = @pro.photo
+%br
+%br
+= link_to "All Products" ,  pros_path
+= link_to "Edit Product" ,  edit_pro_path(@pro)
+= link_to "Delete Product " ,  pros_path(@pro) ,method: :delete ,data: {confirm: "Are you sure ?"}
